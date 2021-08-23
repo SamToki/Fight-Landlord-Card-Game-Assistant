@@ -5,7 +5,7 @@ Begin VB.Form FormMainWindow
    AutoRedraw      =   -1  'True
    BackColor       =   &H00D0D0D0&
    BorderStyle     =   1  'Fixed Single
-   Caption         =   "Fight Landlord Card Game Assistant　v1.01　by Sam Toki"
+   Caption         =   "斗地主棋牌辅助工具 v1.02chs"
    ClientHeight    =   7815
    ClientLeft      =   45
    ClientTop       =   795
@@ -32,9 +32,9 @@ Begin VB.Form FormMainWindow
    Begin VB.Frame FrameDoubler 
       Appearance      =   0  'Flat
       BackColor       =   &H00D0D0D0&
-      Caption         =   "Doubler"
+      Caption         =   "倍数统计"
       BeginProperty Font 
-         Name            =   "Microsoft Sans Serif"
+         Name            =   "Microsoft YaHei UI"
          Size            =   12
          Charset         =   0
          Weight          =   700
@@ -157,7 +157,7 @@ Begin VB.Form FormMainWindow
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         ForeColor       =   &H00C0C0C0&
+         ForeColor       =   &H00D0D0D0&
          Height          =   1725
          Left            =   420
          Locked          =   -1  'True
@@ -191,9 +191,9 @@ Begin VB.Form FormMainWindow
    Begin VB.Frame FrameDice 
       Appearance      =   0  'Flat
       BackColor       =   &H00D0D0D0&
-      Caption         =   "Dice"
+      Caption         =   "癞子玩法"
       BeginProperty Font 
-         Name            =   "Microsoft Sans Serif"
+         Name            =   "Microsoft YaHei UI"
          Size            =   12
          Charset         =   0
          Weight          =   700
@@ -227,10 +227,10 @@ Begin VB.Form FormMainWindow
          Width           =   1380
       End
       Begin VB.CommandButton CmdDiceRoll 
-         Caption         =   "START"
+         Caption         =   "抽取"
          Default         =   -1  'True
          BeginProperty Font 
-            Name            =   "Microsoft Sans Serif"
+            Name            =   "Microsoft YaHei UI"
             Size            =   36
             Charset         =   0
             Weight          =   400
@@ -265,7 +265,7 @@ Begin VB.Form FormMainWindow
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         ForeColor       =   &H00C0C0C0&
+         ForeColor       =   &H00D0D0D0&
          Height          =   3645
          Left            =   4880
          Locked          =   -1  'True
@@ -289,7 +289,7 @@ Begin VB.Form FormMainWindow
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         ForeColor       =   &H00C0C0C0&
+         ForeColor       =   &H00D0D0D0&
          Height          =   3645
          Left            =   420
          Locked          =   -1  'True
@@ -307,7 +307,7 @@ Begin VB.Form FormMainWindow
          BackStyle       =   0  'Transparent
          Caption         =   "-"
          BeginProperty Font 
-            Name            =   "Microsoft Sans Serif"
+            Name            =   "Microsoft YaHei UI"
             Size            =   36
             Charset         =   0
             Weight          =   400
@@ -316,10 +316,10 @@ Begin VB.Form FormMainWindow
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H00000000&
-         Height          =   795
-         Left            =   4880
+         Height          =   1005
+         Left            =   4875
          TabIndex        =   5
-         Top             =   525
+         Top             =   420
          Width           =   4035
       End
       Begin VB.Label LabelDiceNumber1 
@@ -327,9 +327,9 @@ Begin VB.Form FormMainWindow
          Appearance      =   0  'Flat
          BackColor       =   &H000000FF&
          BackStyle       =   0  'Transparent
-         Caption         =   "Dice"
+         Caption         =   "癞子"
          BeginProperty Font 
-            Name            =   "Microsoft Sans Serif"
+            Name            =   "Microsoft YaHei UI"
             Size            =   36
             Charset         =   0
             Weight          =   400
@@ -338,10 +338,10 @@ Begin VB.Form FormMainWindow
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H00000000&
-         Height          =   795
+         Height          =   1005
          Left            =   420
          TabIndex        =   3
-         Top             =   525
+         Top             =   420
          Width           =   4035
       End
    End
@@ -405,134 +405,80 @@ Begin VB.Form FormMainWindow
       _cx             =   794
       _cy             =   741
    End
-   Begin VB.Menu MenuDoubler 
-      Caption         =   "D&oubler"
-      Begin VB.Menu MenuDoublerX2 
-         Caption         =   "x2"
-         Shortcut        =   ^{F2}
-      End
-      Begin VB.Menu MenuDoublerX3 
-         Caption         =   "x3"
-         Shortcut        =   ^{F3}
-      End
-      Begin VB.Menu MenuDoublerX5 
-         Caption         =   "x5"
-         Shortcut        =   ^{F5}
-      End
-      Begin VB.Menu MenuDoublerX6 
-         Caption         =   "x6"
-         Shortcut        =   ^{F6}
-      End
-      Begin VB.Menu MenuDoubler1_ 
-         Caption         =   "-"
-      End
-      Begin VB.Menu MenuDoublerUndo 
-         Caption         =   "←　Undo"
-         Enabled         =   0   'False
-         Shortcut        =   ^Z
-      End
-      Begin VB.Menu MenuDoublerReset 
-         Caption         =   "＊　Reset"
-         Shortcut        =   +{DEL}
-      End
-   End
-   Begin VB.Menu MenuDice 
-      Caption         =   "D&ice"
-      Begin VB.Menu MenuDiceRoll 
-         Caption         =   "START"
-         Shortcut        =   {F5}
-      End
-      Begin VB.Menu MenuDice1_ 
-         Caption         =   "-"
-      End
-      Begin VB.Menu MenuDiceReset 
-         Caption         =   "＊　Reset"
-         Shortcut        =   {DEL}
-      End
-   End
-   Begin VB.Menu Menu1_ 
-      Caption         =   "　|　"
-      Enabled         =   0   'False
-   End
-   Begin VB.Menu MenuSoundSwitch 
-      Caption         =   "Soun&d ON"
-   End
-   Begin VB.Menu MenuAbout 
-      Caption         =   "&About"
-      Begin VB.Menu MenuAboutName 
-         Caption         =   "Fight Landlord Card Game Assistant"
-      End
-      Begin VB.Menu MenuAboutVersion 
-         Caption         =   "v1.01 Release Version　|　for Windows 7,8,10　|　Multilingual"
-      End
-      Begin VB.Menu MenuAboutDate 
-         Caption         =   "Last compiled on Thu, Sep 24, 2020"
-      End
-      Begin VB.Menu MenuAboutFirst 
-         Caption         =   "First version built on Sun, Jul 14, 2019"
-      End
-      Begin VB.Menu MenuAbout1_ 
-         Caption         =   "-"
-      End
-      Begin VB.Menu MenuAboutAuthor 
-         Caption         =   "Author: Sam Toki"
-      End
-      Begin VB.Menu MenuAboutOrganization 
-         Caption         =   "Organization: SAM TOKI STUDIO"
-      End
-      Begin VB.Menu MenuAboutFrom 
-         Caption         =   "From: Xidian University, China"
-      End
-      Begin VB.Menu MenuAboutContact 
-         Caption         =   "Contact: SamToki@outlook.com"
-      End
-      Begin VB.Menu MenuAbout2_ 
-         Caption         =   "-"
-      End
-      Begin VB.Menu MenuAboutCopyright 
-         Caption         =   "TM ＆ (C) 2015-2020 SAM TOKI STUDIO. All rights reserved."
-      End
-      Begin VB.Menu MenuAboutTrademark 
-         Caption         =   "SAM TOKI STUDIO is a trademark of CZJ Software Technologies (CZJST) Inc. in the P.R.C and other countries."
-      End
-      Begin VB.Menu MenuAbout3_ 
-         Caption         =   "-"
-      End
-      Begin VB.Menu MenuAboutCommercial 
-         Caption         =   "Commercial use of this software is strictly prohibited."
-      End
-   End
-   Begin VB.Menu Menu2_ 
-      Caption         =   "　|　"
-      Enabled         =   0   'False
-   End
-   Begin VB.Menu MenuLanguage 
-      Caption         =   "Ａ字あ (&L)"
-      Begin VB.Menu MenuLanguageENG 
-         Caption         =   "English (United States)"
+   Begin VB.Menu Menu 
+      Caption         =   "菜单"
+      Begin VB.Menu MenuSoundSwitch 
+         Caption         =   "音效"
          Checked         =   -1  'True
-         Shortcut        =   +{F1}
+         Shortcut        =   {F2}
       End
-      Begin VB.Menu MenuLanguageCHS 
-         Caption         =   "中文（简体）"
-         Shortcut        =   +{F2}
+      Begin VB.Menu MenuEXIT 
+         Caption         =   "退出"
+         Shortcut        =   {F4}
       End
-      Begin VB.Menu MenuLanguageCHT 
-         Caption         =   "中文（繁體）"
-         Enabled         =   0   'False
-         Shortcut        =   +{F3}
+      Begin VB.Menu Menu1_ 
+         Caption         =   "-"
       End
-      Begin VB.Menu MenuLanguageJPN 
-         Caption         =   "日本語"
-         Shortcut        =   +{F4}
+      Begin VB.Menu MenuDoubler 
+         Caption         =   "倍数统计"
+         Begin VB.Menu MenuDoublerX2 
+            Caption         =   "x2"
+            Shortcut        =   ^{F2}
+         End
+         Begin VB.Menu MenuDoublerX3 
+            Caption         =   "x3"
+            Shortcut        =   ^{F3}
+         End
+         Begin VB.Menu MenuDoublerX5 
+            Caption         =   "x5"
+            Shortcut        =   ^{F5}
+         End
+         Begin VB.Menu MenuDoublerX6 
+            Caption         =   "x6"
+            Shortcut        =   ^{F6}
+         End
+         Begin VB.Menu MenuDoubler1_ 
+            Caption         =   "-"
+         End
+         Begin VB.Menu MenuDoublerUndo 
+            Caption         =   "←　撤消"
+            Enabled         =   0   'False
+            Shortcut        =   ^Z
+         End
+         Begin VB.Menu MenuDoublerReset 
+            Caption         =   "＊　重置"
+            Shortcut        =   +{F7}
+         End
       End
-   End
-   Begin VB.Menu Menu3_ 
-      Caption         =   "　|　"
-      Enabled         =   0   'False
-   End
-   Begin VB.Menu MenuEXIT 
-      Caption         =   "E&XIT"
+      Begin VB.Menu MenuDice 
+         Caption         =   "癞子玩法"
+         Begin VB.Menu MenuDiceRoll 
+            Caption         =   "抽取"
+            Shortcut        =   {F5}
+         End
+         Begin VB.Menu MenuDice1_ 
+            Caption         =   "-"
+         End
+         Begin VB.Menu MenuDiceReset 
+            Caption         =   "＊　重置"
+            Shortcut        =   {F7}
+         End
+      End
+      Begin VB.Menu Menu2_ 
+         Caption         =   "-"
+      End
+      Begin VB.Menu MenuAbout 
+         Caption         =   "关于"
+         Begin VB.Menu MenuAboutGitHub 
+            Caption         =   "GitHub @SamToki"
+         End
+         Begin VB.Menu MenuAboutLicense 
+            Caption         =   "Released under license GNU GPL v3"
+         End
+         Begin VB.Menu MenuAboutCopyright 
+            Caption         =   "TM && (C) 2015-2021 SAM TOKI STUDIO"
+         End
+      End
    End
 End
 Attribute VB_Name = "FormMainWindow"
@@ -554,7 +500,6 @@ Public doublernumber As Long
 Public doublernumberprev As Long
 
 'DIM Preferences...
-Public setlanguage As String
 Public soundswitch As Boolean
 Public windowanimationswitch As Boolean
 
@@ -582,7 +527,6 @@ Public answer
         dicecounter = 0
         doublernumber = 1
         doublernumberprev = 1
-        setlanguage = "ENG"
         soundswitch = True
         windowanimationswitch = True
 
@@ -671,23 +615,16 @@ Public answer
     Public Sub DoublerRefresher()
         Select Case doublernumber
             Case 1
-                TextboxDoublerNumber.ForeColor = &HC0C0C0
+                TextboxDoublerNumber.ForeColor = &HD0D0D0
             Case Is > 100
                 TextboxDoublerNumber.ForeColor = &HFF&
             Case Else
-                TextboxDoublerNumber.ForeColor = &HFF8000
+                TextboxDoublerNumber.ForeColor = &HFF9000
         End Select
 
         If doublernumber > 99999 Then
             doublernumber = 99999
-            Select Case setlanguage
-                Case "ENG"
-                    MsgBox "The maximum number of the doubler is 99999.", vbExclamation + vbOKOnly, "CAUTION"
-                Case "CHS"
-                    MsgBox "倍数的上限为 99999。", vbExclamation + vbOKOnly, "注意"
-                Case "JPN"
-                    MsgBox "倍数の最大値は 99999 です。", vbExclamation + vbOKOnly, "注意"
-            End Select
+            MsgBox "倍数的上限为 99999。", vbExclamation + vbOKOnly, "注意"
         End If
 
         'JUDGE WHETHER UNDO IS AVAILABLE...
@@ -706,7 +643,7 @@ Public answer
 
     Public Sub MenuDiceRoll_Click()
         If dicestatus = 3 Then Exit Sub
-        If soundswitch = True Then WindowsMediaPlayer1.URL = App.Path & "\CZJST_appdata\CZJST_audio\CZJSTaudio_DiceRoll.wav"
+        If soundswitch = True Then WindowsMediaPlayer1.URL = App.Path & "\CZJSTappdata\CZJSTaudio\CZJSTaudio_DiceRoll.wav"
 
         TimerDice.Enabled = True
         dicecounter = 6
@@ -739,7 +676,7 @@ Public answer
                 dicenumber1 = dicetemp
                 Call DiceRefresher  'PAY ATTENTION TO THE ORDER!
                 If dicecounter = 0 Then
-                        TextboxDiceNumber1.ForeColor = &H80FF&
+                        TextboxDiceNumber1.ForeColor = &H90FF&
                         dicestatus = 2
                 End If
             Case 2
@@ -750,21 +687,14 @@ Public answer
                     If dicenumber2 = dicenumber1 Then
                         dicecounter = 1
                     Else
-                        TextboxDiceNumber2.ForeColor = &H80FF&
+                        TextboxDiceNumber2.ForeColor = &H90FF&
                         dicestatus = 3
                     End If
                 End If
                 Call DiceRefresher  'PAY ATTENTION TO THE ORDER!
             Case Else
                 'THIS IS AN ERROR!
-                Select Case setlanguage
-                    Case "ENG"
-                        MsgBox "Sorry, an error has occurred and the program has partly stopped working. We would appreciate it if you can send a feedback to us so as to help solve the problem.", vbCritical + vbOKOnly, "ERROR"
-                    Case "CHS"
-                        MsgBox "很抱歉，程序发生异常。请向我们提供反馈。", vbCritical + vbOKOnly, "错误"
-                    Case "JPN"
-                        MsgBox "すみません、エラーが発生しました。著者に報告してください。", vbCritical + vbOKOnly, "エラー"
-                End Select
+                MsgBox "很抱歉，程序发生异常。您可通过 GitHub @SamToki 提供反馈。", vbCritical + vbOKOnly, "错误"
         End Select
     End Sub
     Public Sub DiceNumberFormer()
@@ -778,53 +708,25 @@ Public answer
 
         Select Case dicestatus
             Case 0
-                TextboxDiceNumber1.ForeColor = &HC0C0C0
-                TextboxDiceNumber2.ForeColor = &HC0C0C0
+                TextboxDiceNumber1.ForeColor = &HD0D0D0
+                TextboxDiceNumber2.ForeColor = &HD0D0D0
                 MenuDiceRoll.Enabled = True
                 CmdDiceRoll.Enabled = True
-                Select Case setlanguage
-                    Case "ENG"
-                        MenuDiceRoll.Caption = "START"
-                    Case "CHS"
-                        MenuDiceRoll.Caption = "开始"
-                    Case "JPN"
-                        MenuDiceRoll.Caption = "スタート"
-                End Select
+                MenuDiceRoll.Caption = "抽取"
             Case 1
-                TextboxDiceNumber1.ForeColor = &HC0C0C0
-                TextboxDiceNumber2.ForeColor = &HC0C0C0
-                Select Case setlanguage
-                    Case "ENG"
-                        MenuDiceRoll.Caption = "CONTINUE"
-                    Case "CHS"
-                        MenuDiceRoll.Caption = "继续"
-                    Case "JPN"
-                        MenuDiceRoll.Caption = "続く"
-                End Select
+                TextboxDiceNumber1.ForeColor = &HD0D0D0
+                TextboxDiceNumber2.ForeColor = &HD0D0D0
+                MenuDiceRoll.Caption = "继续抽取"
             Case 2
-                TextboxDiceNumber1.ForeColor = &H80FF&
-                TextboxDiceNumber2.ForeColor = &HC0C0C0
-                Select Case setlanguage
-                    Case "ENG"
-                        MenuDiceRoll.Caption = "CONTINUE"
-                    Case "CHS"
-                        MenuDiceRoll.Caption = "继续"
-                    Case "JPN"
-                        MenuDiceRoll.Caption = "続く"
-                End Select
+                TextboxDiceNumber1.ForeColor = &H90FF&
+                TextboxDiceNumber2.ForeColor = &HD0D0D0
+                MenuDiceRoll.Caption = "继续抽取"
             Case 3
-                TextboxDiceNumber1.ForeColor = &H80FF&
-                TextboxDiceNumber2.ForeColor = &H80FF&
+                TextboxDiceNumber1.ForeColor = &H90FF&
+                TextboxDiceNumber2.ForeColor = &H90FF&
                 MenuDiceRoll.Enabled = False
                 CmdDiceRoll.Enabled = False
-                Select Case setlanguage
-                    Case "ENG"
-                        MenuDiceRoll.Caption = "FINISHED"
-                    Case "CHS"
-                        MenuDiceRoll.Caption = "已完成"
-                    Case "JPN"
-                        MenuDiceRoll.Caption = "完了しました"
-                End Select
+                MenuDiceRoll.Caption = "已完成"
         End Select
 
         CmdDiceRoll.Caption = MenuDiceRoll.Caption
@@ -843,75 +745,27 @@ Public answer
 
         'CHANGE TITLE TEXT...
         If TextboxDiceNumber2.Text = "?" Then
-            Select Case setlanguage
-                Case "ENG"
-                    LabelDiceNumber1.Caption = "Dice"
-                    LabelDiceNumber2.Caption = "-"
-                Case "CHS"
-                    LabelDiceNumber1.Caption = "癞子"
-                    LabelDiceNumber2.Caption = "-"
-                Case "JPN"
-                    LabelDiceNumber1.Caption = "サイコロ"
-                    LabelDiceNumber2.Caption = "-"
-            End Select
+            LabelDiceNumber1.Caption = "癞子"
+            LabelDiceNumber2.Caption = "-"
         Else
-            Select Case setlanguage
-                Case "ENG"
-                    LabelDiceNumber1.Caption = "DiceA"
-                    LabelDiceNumber2.Caption = "DiceB"
-                Case "CHS"
-                    LabelDiceNumber1.Caption = "天癞子"
-                    LabelDiceNumber2.Caption = "地癞子"
-                Case "JPN"
-                    LabelDiceNumber1.Caption = "サイコロＡ"
-                    LabelDiceNumber2.Caption = "サイコロＢ"
-            End Select
+            LabelDiceNumber1.Caption = "天癞子"
+            LabelDiceNumber2.Caption = "地癞子"
         End If
     End Sub
 
 '[] MENU []
 
-    'CMD General...
-    Public Sub MenuEXIT_Click()
-        End
-    End Sub
-
-    'CMD Language...
-    Public Sub MenuLanguageENG_Click()
-        Call ModuleLoadLanguage.LoadLanguageENG
-    End Sub
-    Public Sub MenuLanguageCHS_Click()
-        Call ModuleLoadLanguage.LoadLanguageCHS
-    End Sub
-    Public Sub MenuLanguageJPN_Click()
-        Call ModuleLoadLanguage.LoadLanguageJPN
-    End Sub
-
-    'CMD Preferences...
     Public Sub MenuSoundSwitch_Click()
         If soundswitch = True Then
             soundswitch = False
-            Select Case setlanguage
-                Case "ENG"
-                    MenuSoundSwitch.Caption = "Soun&d OFF"
-                Case "CHS"
-                    MenuSoundSwitch.Caption = "声音 关 (&D)"
-                Case "JPN"
-                    MenuSoundSwitch.Caption = "音声 オフ (&D)"
-            End Select
-            WindowsMediaPlayer1.URL = ""
+            MenuSoundSwitch.Checked = False
         Else
             soundswitch = True
-            Select Case setlanguage
-                Case "ENG"
-                    MenuSoundSwitch.Caption = "Soun&d ON"
-                Case "CHS"
-                    MenuSoundSwitch.Caption = "声音 开 (&D)"
-                Case "JPN"
-                    MenuSoundSwitch.Caption = "音声 オン (&D)"
-            End Select
-            WindowsMediaPlayer1.URL = ""
+            MenuSoundSwitch.Checked = True
         End If
+    End Sub
+    Public Sub MenuEXIT_Click()
+        End
     End Sub
 
 '================================================================================
