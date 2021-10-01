@@ -491,11 +491,11 @@ Attribute VB_Exposed = False
 Option Explicit
 
 'DIM Features...
-Public dicestatus As Single
-Public dicenumber1 As Single
-Public dicenumber2 As Single
-Public dicetemp As Single
-Public dicecounter As Single
+Public dicestatus As Integer
+Public dicenumber1 As Integer
+Public dicenumber2 As Integer
+Public dicetemp As Integer
+Public dicecounter As Integer
 Public doublernumber As Long
 Public doublernumberprev As Long
 
@@ -504,9 +504,9 @@ Public soundswitch As Boolean
 Public windowanimationswitch As Boolean
 
 'DIM Clock...
-Public clockhour As Single
-Public clockmin As Single
-Public clocksec As Single
+Public clockhour As Integer
+Public clockmin As Integer
+Public clocksec As Integer
 
 'DIM Dialogue...
 Public answer
